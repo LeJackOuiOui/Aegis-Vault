@@ -6,10 +6,11 @@ import '../models/safehouse_model.dart';
 class SupabaseService {
   final SupabaseClient _client = Supabase.instance.client;
 
-  // === RAMA: feature/local-storage ===
   // Almacenamiento seguro encriptado para el caché de emergencia
   final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
   static const String _cacheKey = 'aegis_safehouses_cache';
+  static const double _neonVaultLat = 4.7068;
+  static const double _neonVaultLng = -74.2210;
 
   Future<List<Safehouse>> fetchSafehouses() async {
     try {
