@@ -6,6 +6,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Inicialización de Supabase con la Red Central de Aegis Vault
+  await Supabase.initialize(
+    url: 'https://qiialiwjdyqlrmtcorod.supabase.co', 
+    anonKey: 'sb_publishable_8kjd_ZfSCKUDh7fop_bZNw_PvJ2I2ar',
+  );
 
   runApp(const AegisVaultApp());
 }
@@ -22,13 +26,12 @@ class AegisVaultApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor:
-              Colors.teal, // Color temático de agentes secretos/tecnología
-          brightness:
-              Brightness.dark, // Modo oscuro ideal para operaciones de campo
+          seedColor: Colors.teal, // Color temático de agentes secretos/tecnología
+          brightness: Brightness.dark, // Modo oscuro ideal para operaciones de campo
         ),
       ),
       home: const HomeScreen(),
     );
   }
 }
+
